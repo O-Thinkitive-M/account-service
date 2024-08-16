@@ -1,0 +1,20 @@
+version: "3.9"
+
+services:
+  postgres:
+    container_name: account_db
+    image: postgres:15.7
+    ports:
+      - "5433:5432"
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: my-password
+      POSTGRES_DB: accountdb
+      PGDATA: /data/postgres
+    volumes:
+      - postgres-db:/data/postgres
+    restart: on-failure
+
+volumes:
+  postgres-db:
+    driver: local

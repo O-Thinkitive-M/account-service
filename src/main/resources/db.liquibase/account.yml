@@ -1,0 +1,25 @@
+databaseChangeLog:
+  - changeSet:
+      id: account_table
+      author: om
+      changes:
+        - createTable:
+            tableName: account
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: name
+                  type: VARCHAR(255)
+              - column:
+                  name: bank
+                  type: VARCHAR(255)
+              - column:
+                  name: userid
+                  type: BIGINT
+                  constraints:
+                    foreignKeyName: fk_user_id

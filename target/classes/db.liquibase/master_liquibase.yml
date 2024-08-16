@@ -1,0 +1,3 @@
+databaseChangeLog:
+  - include:
+      file: db.liquibase/account.yml
